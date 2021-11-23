@@ -4,19 +4,17 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MemberCreateComponent } from './member-create/member-create.component';
-import { MemberEditComponent } from './member-edit/member-edit.component';
 import { MemberListComponent } from './member-list/member-list.component';
 import { DataCacheService } from './shared/data-cache.service';
 import { MemberDetailsComponent } from './member-details/member-details.component';
+import { MemberCardComponent } from './member-card/member-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MemberCreateComponent,
-    MemberEditComponent,
     MemberListComponent,
-    MemberDetailsComponent
+    MemberDetailsComponent,
+    MemberCardComponent
   ],
   imports: [
     BrowserModule,

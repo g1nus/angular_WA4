@@ -1,10 +1,8 @@
-<p>member-list works!</p>
 <div *ngIf="Member.length !== 0">
-  <h1>Here's the list of members</h1>
-  <div *ngFor="let member of Member">
-    <p>
-      <a routerLink="/member-details/{{member.PersonID}}">{{member.PersonID}}</a><br/>
-      {{member.BirthDate}}<br/>
-    </p>
+  <h1 class="main-title">Scottish Parliament Members</h1>
+  <div class="container-flex">
+    <div *ngFor="let member of Member">
+      <app-member-card [member]="member"></app-member-card>
+    </div>
   </div>
 </div>

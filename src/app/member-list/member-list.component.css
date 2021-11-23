@@ -1,0 +1,16 @@
+div.container-flex{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: space-around;
+  width: 1000px;
+  margin: 0 auto;
+}
+h1.main-title{
+  color: #5c2e92;
+  text-align: center;
+  font-size: 42px;
+  font-weight: 500;
+  margin: 29px 0 35px 0;
+}

@@ -1,0 +1,8 @@
+<div class="member-card" routerLink="/member-details/{{member.PersonID}}" *ngIf="member !== undefined">
+  <!--<a routerLink="/member-details/{{member.PersonID}}">{{member.PersonID}}</a><br/>-->
+  <div class="card-head"></div>
+  <div class="image-wrapper">
+    <div class="image" [ngStyle]="{'background-image': 'url(' + member.PhotoURL + ')'}"> </div>
+  </div>
+  <p class="name">{{member.ParliamentaryName}}</p>
+</div>
