@@ -1,1 +1,7 @@
 <p>member-details works! {{id}}</p>
+<div *ngIf="memberDetails !== undefined">
+  {{memberDetails.Party}}
+  <div *ngFor="let ws of memberDetails.WebURLs">
+    <p>{{ws}}</p>
+  </div>
+</div>

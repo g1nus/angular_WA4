@@ -8,5 +8,6 @@ export class MemberDetails {
   PreferredName: string | undefined;
   GenderTypeID: number | undefined;
   IsCurrent: number | undefined;
-  WebURL: string | undefined;
+  WebURLs: (string | undefined)[] | undefined;
+  Party: string | undefined;
 }
