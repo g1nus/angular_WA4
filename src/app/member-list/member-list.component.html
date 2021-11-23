@@ -3,7 +3,7 @@
   <h1>Here's the list of members</h1>
   <div *ngFor="let member of Member">
     <p>
-      {{member.PersonID}}<br/>
+      <a routerLink="/member-details/{{member.PersonID}}">{{member.PersonID}}</a><br/>
       {{member.BirthDate}}<br/>
     </p>
   </div>

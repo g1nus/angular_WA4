@@ -4,6 +4,10 @@ import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 
 import { Member } from './member';
+import { Parties } from './parties';
+import { MemberParties } from './member-parties';
+import { Websites } from './websites';
+import { MemberDetails } from './member-details';
 
 @Injectable({
   providedIn: 'root'
@@ -27,8 +31,25 @@ export class RestApiService {
     );
   }
 
-  getMember(id: number): Observable<Member> {
-    
+  getParties(): Observable<Parties[]> {
+    return this.http.get<Parties[]>(this.apiUrl + '/parties').pipe(
+      retry(1),
+      catchError(this.handleError)
+    );
+  }
+
+  getMemberParties(): Observable<MemberParties[]> {
+    return this.http.get<MemberParties[]>(this.apiUrl + '/memberparties').pipe(
+      retry(1),
+      catchError(this.handleError)
+    );
+  }
+
+  getWebsites(): Observable<Websites[]> {
+    return this.http.get<Websites[]>(this.apiUrl + '/websites').pipe(
+      retry(1),
+      catchError(this.handleError)
+    );
   }
 
   handleError(error: any) {
