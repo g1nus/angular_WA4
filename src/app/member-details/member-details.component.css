@@ -1,0 +1,48 @@
+div.member-header{
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 10px 450px 20px 600px 10px;
+  grid-template-rows: 10px 60px 30px 10px 40px 160px 10px;
+  grid-template-areas: 
+    ". . . . ."
+    ". picture . name ."
+    ". picture . id ."
+    ". picture . . ."
+    ". picture . birthdate ."
+    ". picture . . ."
+    ". . . . .";
+}
+
+div.profile-picture, p.profile-name, p.profile-id, p.profile-birthdate{
+  justify-self: stretch;
+  align-self: stretch;
+}
+div.profile-picture{
+  grid-area: picture;
+  background-size: cover;
+}
+
+p.profile-name{
+  grid-area: name;
+  font-size: 40px;
+  margin: 0px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 70px;
+  color: #5c2e92;
+}
+
+p.profile-id{
+  grid-area: id;
+  font-weight: 300;
+  margin: 0px;
+  color: #7a7a7a;
+  font-style: italic;
+}
+
+p.profile-birthdate{
+  grid-area: birthdate;
+  margin: 0px;
+  grid-area: birthdate;
+  font-size: 21px;
+}

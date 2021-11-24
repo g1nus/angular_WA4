@@ -89,12 +89,27 @@ export class MemberDetailsComponent implements OnInit {
 
   elaborateData(){
     console.log("5. data will be elaborated now...");
+    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     let memberTmp = this.dataCache.members.find(m => m.PersonID === this.id);
+    let dateStr = "No birth date is defined";
     if(memberTmp !== undefined){
       let websites = this.dataCache.websites.filter(w => w.PersonID === this.id);
       let webURLs = websites.map(x => x.WebURL);
+      if(memberTmp.BirthDate){
+        let date = new Date(memberTmp.BirthDate + "");
+        dateStr = "" + (date.getDay() === 0 ? 1 : date.getDay()) + " " + months[date.getMonth()] + ", " + date.getFullYear();
+      }
+      if(memberTmp.PhotoURL === ""){
+        if(memberTmp.GenderTypeID === 2){
+          memberTmp.PhotoURL = "/assets/no-pic-m.png";
+        }else{
+          memberTmp.PhotoURL = "/assets/no-pic-f.png";
+        }
+      }
       this.memberDetails = {
         ...memberTmp,
+        ParliamentaryName: memberTmp.ParliamentaryName?.replace(',', ''),
+        BirthDate: dateStr,
         WebURLs: webURLs,
         Party: this.dataCache.parties.find(pd => pd.ID === this.dataCache.memberParties.find(p => p.PersonID === this.id)?.PartyID)?.ActualName
       }

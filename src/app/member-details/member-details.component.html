@@ -1,7 +1,17 @@
-<p>member-details works! {{id}}</p>
 <div *ngIf="memberDetails !== undefined">
-  {{memberDetails.Party}}
-  <div *ngFor="let ws of memberDetails.WebURLs">
-    <p>{{ws}}</p>
+  <div class="member-header">
+    <div class="profile-picture" [ngStyle]="{'background-image': 'url(' + memberDetails.PhotoURL + ')'}"></div>
+    <p class="profile-name">{{memberDetails.ParliamentaryName}}</p>
+    <p class="profile-id">Member ID: {{memberDetails.PersonID}}</p>
+    <p class="profile-birthdate">{{memberDetails.BirthDate}}</p>
+  </div>
+  <div class="profile-party">
+    A member of <span class="party-name">{{memberDetails.Party}}</span> since <span>date</span>
+  </div>
+  <div class="profile-websites" *ngIf="memberDetails.WebURLs?.length !== 0">
+    <p>Official websites: </p>
+    <div *ngFor="let ws of memberDetails.WebURLs">
+      <a href="{{ws}}">{{ws}}</a>
+    </div>
   </div>
 </div>
