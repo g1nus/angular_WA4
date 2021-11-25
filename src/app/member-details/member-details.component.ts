@@ -106,12 +106,18 @@ export class MemberDetailsComponent implements OnInit {
           memberTmp.PhotoURL = "/assets/no-pic-f.png";
         }
       }
+      let validPartyDate = this.dataCache.memberParties.find(mp => mp.PersonID === this.id)?.ValidFromDate;
+      if(validPartyDate){
+        let date = new Date(validPartyDate);
+        validPartyDate = "" + (date.getDay() === 0 ? 1 : date.getDay()) + "/" + date.getMonth() + "/" + date.getFullYear();
+      }
       this.memberDetails = {
         ...memberTmp,
         ParliamentaryName: memberTmp.ParliamentaryName?.replace(',', ''),
         BirthDate: dateStr,
         WebURLs: webURLs,
-        Party: this.dataCache.parties.find(pd => pd.ID === this.dataCache.memberParties.find(p => p.PersonID === this.id)?.PartyID)?.ActualName
+        Party: this.dataCache.parties.find(pd => pd.ID === this.dataCache.memberParties.find(p => p.PersonID === this.id)?.PartyID)?.ActualName,
+        PartyFromDate: validPartyDate
       }
     }
   }

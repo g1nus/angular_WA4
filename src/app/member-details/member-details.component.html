@@ -6,12 +6,12 @@
     <p class="profile-birthdate">{{memberDetails.BirthDate}}</p>
   </div>
   <div class="profile-party">
-    A member of <span class="party-name">{{memberDetails.Party}}</span> since <span>date</span>
+    Member of <span class="party-name">{{memberDetails.Party}}</span> since <span>{{memberDetails.PartyFromDate}}</span>
   </div>
   <div class="profile-websites" *ngIf="memberDetails.WebURLs?.length !== 0">
     <p>Official websites: </p>
     <div *ngFor="let ws of memberDetails.WebURLs">
-      <a href="{{ws}}">{{ws}}</a>
+      - <a href="{{ws}}">{{ws}}</a>
     </div>
   </div>
-</div>
+</div>  

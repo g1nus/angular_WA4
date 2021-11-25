@@ -1,5 +1,5 @@
 div.member-header{
-  margin-top: 20px;
+  margin: 20px auto 10px 20px;
   display: grid;
   grid-template-columns: 10px 450px 20px 600px 10px;
   grid-template-rows: 10px 60px 30px 10px 40px 160px 10px;
@@ -45,4 +45,27 @@ p.profile-birthdate{
   margin: 0px;
   grid-area: birthdate;
   font-size: 21px;
+}
+
+div.profile-party{
+  margin: 0px auto 10px 30px;
+  font-size: 18px;
+}
+
+div.profile-party span.party-name{
+  color: #9a7eba;
+}
+
+div.profile-websites{
+  margin: 0px auto auto 30px;
+}
+
+div.profile-websites p{
+  margin-bottom: 0px;
+}
+
+div.profile-websites a{
+  color: #511fd1;
+  text-decoration-style: dashed;
+  padding: 0px 0px 0px 5px;
 }

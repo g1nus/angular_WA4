@@ -10,4 +10,5 @@ export class MemberDetails {
   IsCurrent: number | undefined;
   WebURLs: (string | undefined)[] | undefined;
   Party: string | undefined;
+  PartyFromDate: string | undefined;
 }
