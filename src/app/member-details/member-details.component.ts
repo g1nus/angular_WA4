@@ -109,7 +109,7 @@ export class MemberDetailsComponent implements OnInit {
       let validPartyDate = this.dataCache.memberParties.find(mp => mp.PersonID === this.id)?.ValidFromDate;
       if(validPartyDate){
         let date = new Date(validPartyDate);
-        validPartyDate = "" + (date.getDay() === 0 ? 1 : date.getDay()) + "/" + date.getMonth() + "/" + date.getFullYear();
+        validPartyDate = "" + date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
       }
       this.memberDetails = {
         ...memberTmp,
